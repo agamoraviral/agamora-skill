@@ -85,12 +85,13 @@ from deckkit.primitives import big, hand
 from deckkit.canvas import Canvas, chain
 from deckkit import accents as A, charts as C, schemes as S, layouts as L
 from deckkit.gantt import gantt
-from deckkit.cover_iso import cover_slide, bank_swarm
+from deckkit.cover_iso import cover_slide
+from deckkit.cover_flow import swarm_to_bank
 
 EFFECT = [310, 420, 560, 700, 820]                # млн ₽ по годам — единственный источник чисел
 YEARS = ["2027", "2028", "2029", "2030", "2031"]
 
-F = [cover_slide("Название<br>в две строки", "Метка · дата", "Зачем и как", "Для кого · дата", bank_swarm())]
+F = [cover_slide("Название<br>в две строки", "Метка · дата", "Зачем и как", "Для кого · дата", swarm_to_bank())]
 F.append(page("Задача", "Цель и рамки",
               A.hero_number("−30", "%", "затрат на сопровождение за три года", rows=[("Периметр", "120 систем"),
                             ("Срок", "2027–2029"), ("Бюджет", "310 млн ₽ поэтапно")]),
