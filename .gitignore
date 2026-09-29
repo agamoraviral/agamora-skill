@@ -1,0 +1,12 @@
+# результаты сборки и проверки
+skills/agamora-presentations/examples/out/
+qa_*/
+.*.export.html
+__pycache__/
+*.pyc
+
+# локальные бренды (логотипы и цвета конкретной компании) — только на своей машине
+skills/agamora-presentations/brands-local/
+
+.DS_Store
+Thumbs.db

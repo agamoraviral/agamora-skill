@@ -1,0 +1,16 @@
+{
+  "name": "agamora",
+  "description": "Скиллы agamoraviral для Claude Code: дизайнерские презентации для руководства и аналитики.",
+  "owner": {
+    "name": "agamoraviral",
+    "url": "https://github.com/agamoraviral"
+  },
+  "plugins": [
+    {
+      "name": "agamora-presentations",
+      "source": "./",
+      "description": "Дизайнерские презентации для руководства и аналитики: PDF и редактируемый PPTX, без ИИ-слопа.",
+      "version": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "agamora-presentations",
+  "version": "1.0.0",
+  "description": "Дизайнерские презентации для руководства и аналитики уровня режима Design: PDF и редактируемый PPTX, строгий аналитический стиль без ИИ-слопа, библиотека компонентов и автоматическая проверка качества.",
+  "author": {
+    "name": "agamoraviral",
+    "url": "https://github.com/agamoraviral"
+  },
+  "homepage": "https://github.com/agamoraviral/agamora-skill",
+  "repository": "https://github.com/agamoraviral/agamora-skill",
+  "license": "Apache-2.0 OR MIT",
+  "keywords": ["presentations", "slides", "pdf", "pptx", "design", "analytics"]
+}

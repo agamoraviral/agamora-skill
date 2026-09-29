@@ -1,0 +1,25 @@
+{
+  "name": "Editorial: тёплый фон, широкий заголовочный шрифт, один горячий акцент",
+  "fonts": {"text": "Onest", "display": "Unbounded"},
+  "colors": {
+    "primary": "#12151C",
+    "accent": "#B0430A",
+    "light": "#8FA6C8",
+    "motif": "#FF7A2E",
+    "ink": "#1B1F29",
+    "body": "#3D4250",
+    "muted": "#5A5F6E",
+    "rule": "#D8D1C2",
+    "pale": "#FBF9F4",
+    "on_navy_text": "#C9CED8",
+    "tobe_zone": "#EFE9DD",
+    "asis_zone": "#E8E2D5",
+    "grid": "#E4DED2",
+    "gantt_alt": "#F7F4EC",
+    "gantt_vline": "#DCD5C8",
+    "waffle_off": "#E4DED2",
+    "bars_on_navy": "#FF7A2E",
+    "hand_on_navy": "#FF9A5C"
+  },
+  "css": "section.slide{background:#F3F0E8}.at{font-weight:600;letter-spacing:-1px;line-height:1.1;font-size:44px}.sec{letter-spacing:2.4px}"
+}

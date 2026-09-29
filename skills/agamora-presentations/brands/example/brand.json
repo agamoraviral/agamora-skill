@@ -1,0 +1,13 @@
+{
+  "name": "Пример бренда: графит и кобальт",
+  "colors": {
+    "primary": "#1B2A41",
+    "accent": "#2563B8",
+    "light": "#A5BCDD",
+    "motif": "#3B8FD9",
+    "on_navy_text": "#CBD5E3",
+    "tobe_zone": "#E8EFF8",
+    "bars_on_navy": "#5E7FAE",
+    "hand_on_navy": "#9CC8F0"
+  }
+}
