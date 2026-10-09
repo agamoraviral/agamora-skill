@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="docs/agamora-video-demo.mp4" title="Смотреть ролик со звуком">
+  <a href="docs/agamora-video-demo.mp4?raw=true" title="Ролик со звуком: MP4, 1 мин 35 с">
     <img src="docs/agamora-video-demo.gif" alt="Фрагменты ролика, в котором навыки Агаморы представляют себя сами" width="100%">
   </a>
 </p>
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="docs/agamora-video-demo.mp4"><b>▶&nbsp;Ролик со звуком</b></a> &nbsp;·&nbsp;
+  <a href="docs/agamora-video-demo.mp4?raw=true"><b>▶&nbsp;Ролик со звуком</b></a> &nbsp;·&nbsp;
   <a href="docs/agamora-showcase.pdf"><b>Презентация в PDF</b></a> &nbsp;·&nbsp;
   <a href="#установка">Установка</a> &nbsp;·&nbsp;
   <a href="#быстрый-старт">Быстрый старт</a>
@@ -35,9 +35,9 @@
 
 ### Ролик
 
-<a href="docs/agamora-video-demo.mp4"><img src="docs/video-frames.jpg" alt="Кадры ролика: обложка, проблема, сборка слайда, смена бренда" width="100%"></a>
+<a href="docs/agamora-video-demo.mp4?raw=true"><img src="docs/video-frames.jpg" alt="Кадры ролика: обложка, проблема, сборка слайда, смена бренда" width="100%"></a>
 
-**[▶ Смотреть со звуком](docs/agamora-video-demo.mp4)** · 1 мин 35 с · 1920 × 1080 · 30 кадров/с · голос ElevenLabs v4 через OpenRouter
+**[▶ Скачать ролик со звуком](docs/agamora-video-demo.mp4?raw=true)** · MP4, 3,8 МБ · 1 мин 35 с · 1920 × 1080 · 30 кадров/с · голос ElevenLabs v4 через OpenRouter
 
 Восемь сцен из элементов презентации. Элементы появляются на словах диктора, цифры прокручиваются в момент,
 когда о них говорят, удары музыки ложатся на «посадку» цифр, а первый кадр — обложка для превью в мессенджере.
