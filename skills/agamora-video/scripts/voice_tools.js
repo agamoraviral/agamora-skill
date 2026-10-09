@@ -6,7 +6,7 @@
 "use strict";
 const fs = require("fs"), os = require("os"), path = require("path");
 const key = fs.readFileSync(path.join(os.homedir(), "secrets", "openrouter.key"), "utf8").trim();
-const H = { Authorization: "Bearer " + key, "Content-Type": "application/json" }, JUDGE = "~google/gemini-pro-latest";
+const H = { Authorization: "Bearer " + key, "Content-Type": "application/json" }, JUDGE = process.env.JUDGE_MODEL || "~google/gemini-pro-latest";   // другой оценщик — переменной JUDGE_MODEL
 // кандидаты: женские голоса, лучший по русскому произношению в сравнении 2026 года — elevenlabs/eleven-v4 · jessica
 const VOICES = [["elevenlabs/eleven-v4", "jessica"], ["elevenlabs/eleven-v4", "lily"], ["elevenlabs/eleven-v4", "bella"], ["elevenlabs/eleven-v4", "sarah"],
   ["elevenlabs/eleven-v4", "alice"], ["elevenlabs/eleven-v4", "laura"], ["elevenlabs/eleven-v4", "matilda"], ["elevenlabs/eleven-v3", "alice"],
