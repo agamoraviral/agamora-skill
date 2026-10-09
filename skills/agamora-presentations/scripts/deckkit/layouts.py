@@ -72,7 +72,7 @@ def effect_panel(label, value, unit, caption, series, years, extra, W=560):
 
 
 def hero_split(eyebrow, title_html, lead, pains, eff_label, eff_value, eff_unit, eff_caption, eff_note, series, years, bottom):
-    """Первый слайд короткой версии («ванпейджер»): слева NAVY flex 1.45 — наклонные полосы, метка, тезис 64, лид 27,
+    """Первый слайд короткой версии («ванпейджер»): слева NAVY flex 1.45 — мотив бренда, метка, тезис 64, лид 27,
     три «боли» с номерами 40 SKY (заголовок 27, ответ 22); справа — метка, число 116, пометка, столбики 540×300,
     нижнее число 60. pains: [(боль, что меняется)]; bottom: (число, единица, подпись)."""
     ps = "".join(f'<div style="display:flex;gap:24px;border-top:2px solid rgba(255,255,255,{.45 if i == 0 else .2});padding:20px 0">'

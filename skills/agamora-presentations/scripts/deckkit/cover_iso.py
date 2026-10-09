@@ -105,7 +105,7 @@ def bank_swarm(W=760, H=900, base_label="Платформа", side_label="30 с�
 
 def cover_slide(title_html, eyebrow, subtitle, meta, art_html):
     """Титульный слайд: слева логотип 40 px, метка 20 px, заголовок 68 px (−1.4 px), подзаголовок 30 px,
-    внизу строка 20 px и три наклонные полосы 260×110 в правом нижнем углу колонки; справа — панель 760 px NAVY с иллюстрацией."""
+    внизу строка 20 px и мотив бренда 260×110 в правом нижнем углу колонки; справа — панель 760 px NAVY с иллюстрацией."""
     return f"""<section class="slide"><div style="position:absolute;inset:0;display:flex">
   <div style="flex:1;padding:64px 64px 60px 80px;display:flex;flex-direction:column;position:relative">
     <span style="align-self:flex-start;display:flex">@@LOGO(40)@@</span>

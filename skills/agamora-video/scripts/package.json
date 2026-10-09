@@ -1,0 +1,9 @@
+{
+  "name": "agamora-video",
+  "private": true,
+  "description": "Анимационный ролик с закадровым голосом в стиле презентаций: рендер в Chrome, сборка в ffmpeg",
+  "dependencies": {
+    "ffmpeg-static": "^5.2.0",
+    "puppeteer-core": "^23.11.1"
+  }
+}

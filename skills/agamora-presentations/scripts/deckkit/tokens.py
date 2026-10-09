@@ -20,7 +20,7 @@ FONTS_DIR = os.path.join(SKILL, "assets", "fonts")
 NAVY = "#002D72"    # тёмно-синий: заголовки, главные плоскости, выделенный столбец
 BLUE = "#0070BA"    # синий: метка раздела, агенты, рукописные пометки, вторичные полосы
 LBLUE = "#8CB8E0"   # светло-синий: обычные столбцы, бюджет, линия шкалы
-SKY = "#009FDF"     # голубой мотива: наклонные полосы, номера на тёмном
+SKY = "#009FDF"     # голубой мотива: элементы мотива, номера на тёмном
 INK = "#1A2433"     # основной текст и значения
 BODY = "#3B4758"    # текст абзацев (.t)
 MUTED = "#5F6B7C"   # подписи осей, второстепенное
@@ -158,6 +158,37 @@ def _remap_colors(html, brand):
     return rx.sub(lambda m: table[m.group(0).upper()], html)
 
 
+_PG = re.compile(r'<path data-pg="1" d="M(-?[\d.]+),(-?[\d.]+) H(-?[\d.]+) L(-?[\d.]+),(-?[\d.]+) H(-?[\d.]+) Z"')
+_MOTIF = re.compile(r'<g data-motif="([-\d.,]+)" data-fill="([^"]+)" data-op="([\d.]+)">.*?</g>', re.S)
+
+
+def _motif(html, brand):
+    """Мотив бренда (`motif_shape` в brand.json): "slant" — наклонные полосы, "diamond" — цепочка ромбов,
+    иначе — прямые полосы убывающей длины (нейтральный вид по умолчанию). Чужой мотив не берём."""
+    kind = brand.get("motif_shape", "bars")
+    if kind == "slant":
+        return html
+
+    def three(m):
+        x, y, w, hh, h, gap = map(float, m.group(1).split(","))
+        fill, op = m.group(2), (f' opacity="{m.group(3)}"' if float(m.group(3)) < 1 else "")
+        if kind == "diamond":   # три ромба внахлёст с шагом 0,44 высоты — как в знаке Агаморы
+            sw = hh * 0.085
+            r = hh / 2 - sw / 2
+            return "<g>" + "".join(
+                f'<path d="M{cx - r:.1f},{y + hh / 2:.1f} L{cx:.1f},{y + hh / 2 - r:.1f} L{cx + r:.1f},{y + hh / 2:.1f} '
+                f'L{cx:.1f},{y + hh / 2 + r:.1f} Z" fill="none" stroke="{fill}" stroke-width="{sw:.1f}"{op}/>'
+                for cx in (x + hh / 2 + i * 0.44 * hh for i in range(3))) + "</g>"
+        return "<g>" + "".join(f'<rect x="{x:.1f}" y="{y + i * (h + gap):.1f}" width="{w * k:.1f}" height="{h:.1f}" fill="{fill}"{op}/>'
+                               for i, k in enumerate((1, 0.72, 0.44))) + "</g>"
+
+    def straight(m):   # параллелограмм → прямоугольник той же ширины по центру
+        x1, y1, x2, x3, y2, x4 = map(float, m.groups())
+        left, right = (x1 + x4) / 2, (x2 + x3) / 2
+        return f'<path data-pg="1" d="M{left:.1f},{y1:.1f} H{right:.1f} V{y2:.1f} H{left:.1f} Z"'
+    return _PG.sub(straight, _MOTIF.sub(three, html))
+
+
 def _logos(html, brand):
     def img(key, h):
         f = brand.get(key) or (brand.get("logo") if key == "logo_white" else None)
@@ -230,7 +261,7 @@ def build(slides, title, path, css=CSS, brand=None, typo=True):
     html = (f'<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>{title}</title>'
             f'<style>{font_css((text, disp, "Caveat"))}\n{vars_css}\n{css}\n{b.get("css", "")}</style></head><body>'
             + "".join(out) + "</body></html>")
-    html = _logos(_remap_colors(html, b), b)
+    html = _logos(_remap_colors(_motif(html, b), b), b)
     io.open(path, "w", encoding="utf-8").write(html)
     return len(slides)
 

@@ -19,6 +19,7 @@
 import argparse
 import base64
 import io
+import datetime
 import json
 import math
 import os
@@ -617,6 +618,10 @@ def export(html_path, out_path, font_map=None, reflow=False, keep=False, log=pri
                     warn.append("слайд %d: элемент %s пропущен — %s" % (si + 1, k, e))
             if s.get("notes"):
                 slide.notes_slide.notes_text_frame.text = s["notes"]
+        cp = prs.core_properties   # шаблон python-pptx несёт чужие автора и даты — заменяем своими
+        cp.author = cp.last_modified_by = ""
+        cp.title = os.path.splitext(os.path.basename(out_path))[0]
+        cp.created = cp.modified = datetime.datetime.now().replace(microsecond=0)
         prs.save(out_path)
         log("PPTX: %s — слайдов %d, текстовых блоков %d, фигур %d, растровых островов %d"
             % (out_path, len(layout["slides"]), counts["text"], counts["shape"], counts["island"]))

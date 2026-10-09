@@ -27,7 +27,7 @@ class Canvas:
         self.w, self.h, self.under, self.svg, self.over = w, h, [], [], []
 
     def zone(self, x, y, w, h, fill=PALE, border="", label="", lcolor=NAVY):
-        """Подложка-зона (AS IS / TO BE, «Контур банка», «При разработке»). Подпись 22 px в левом верхнем углу."""
+        """Подложка-зона (AS IS / TO BE, «Контур компании», «При разработке»). Подпись 22 px в левом верхнем углу."""
         lab = (f'<div style="position:absolute;left:24px;top:18px;font-size:22px;font-weight:700;color:{lcolor}">{label}</div>' if label else "")
         bd = f"border:{border};" if border else ""
         self.under.append(f'<div style="position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:{fill};{bd}">{lab}</div>')

@@ -1,6 +1,6 @@
 {
   "name": "agamora",
-  "description": "Скиллы agamoraviral для Claude Code: дизайнерские презентации для руководства и аналитики.",
+  "description": "Навыки agamoraviral для Claude Code: дизайнерские презентации и анимационные ролики для руководства.",
   "owner": {
     "name": "agamoraviral",
     "url": "https://github.com/agamoraviral"
@@ -9,8 +9,8 @@
     {
       "name": "agamora-presentations",
       "source": "./",
-      "description": "Дизайнерские презентации для руководства и аналитики: PDF и редактируемый PPTX, без ИИ-слопа.",
-      "version": "1.0.0"
+      "description": "Дизайнерские презентации для руководства (PDF и редактируемый PPTX) и анимационные ролики с голосом по ним, без ИИ-слопа.",
+      "version": "1.1.0"
     }
   ]
 }

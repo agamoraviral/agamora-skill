@@ -10,3 +10,11 @@ skills/agamora-presentations/brands-local/
 
 .DS_Store
 Thumbs.db
+
+# навык видео: зависимости, кэш озвучки, результаты
+skills/agamora-video/scripts/node_modules/
+skills/agamora-video/scripts/package-lock.json
+skills/agamora-video/scripts/audio/
+skills/agamora-video/scripts/*.mp4
+
+skills/agamora-video/scripts/preview/
